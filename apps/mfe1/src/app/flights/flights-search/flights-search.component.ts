@@ -1,5 +1,6 @@
 import {Component, ViewChild, ViewContainerRef, Inject, Injector, ComponentFactoryResolver, OnInit} from '@angular/core';
 
+import {log} from '@mfe1/test';
 
 @Component({
   selector: 'app-flights-search',
@@ -12,7 +13,9 @@ export class FlightsSearchComponent {
 
   constructor(
     @Inject(Injector) private injector,
-    @Inject(ComponentFactoryResolver) private cfr) { }
+    @Inject(ComponentFactoryResolver) private cfr) {
+    log('created!');
+  }
 
   search() {
     alert('Not implemented for this demo!');

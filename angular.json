@@ -19,10 +19,7 @@
             "polyfills": "apps/mfe1/src/polyfills.ts",
             "tsConfig": "apps/mfe1/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/mfe1/src/favicon.ico",
-              "apps/mfe1/src/assets"
-            ],
+            "assets": ["apps/mfe1/src/favicon.ico", "apps/mfe1/src/assets"],
             "styles": [],
             "scripts": [],
             "extraWebpackConfig": "apps/mfe1/webpack.config.js"
@@ -85,13 +82,8 @@
             "polyfills": "apps/mfe1/src/polyfills.ts",
             "tsConfig": "apps/mfe1/tsconfig.spec.json",
             "karmaConfig": "apps/mfe1/karma.conf.js",
-            "assets": [
-              "apps/mfe1/src/favicon.ico",
-              "apps/mfe1/src/assets"
-            ],
-            "styles": [
-              "apps/mfe1/src/styles.css"
-            ],
+            "assets": ["apps/mfe1/src/favicon.ico", "apps/mfe1/src/assets"],
+            "styles": ["apps/mfe1/src/styles.css"],
             "scripts": [],
             "extraWebpackConfig": "webpack.config.js"
           }
@@ -103,12 +95,9 @@
               "apps/mfe1/tsconfig.app.json",
               "apps/mfe1/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
-  
       }
     },
     "shell": {
@@ -127,10 +116,7 @@
             "polyfills": "apps/shell/src/polyfills.ts",
             "tsConfig": "apps/shell/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/shell/src/favicon.ico",
-              "apps/shell/src/assets"
-            ],
+            "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
             "styles": [],
             "scripts": [],
             "extraWebpackConfig": "apps/shell/webpack.config.js"
@@ -193,10 +179,7 @@
             "polyfills": "apps/shell/src/polyfills.ts",
             "tsConfig": "apps/shell/tsconfig.spec.json",
             "karmaConfig": "apps/shell/karma.conf.js",
-            "assets": [
-              "apps/shell/src/favicon.ico",
-              "apps/shell/src/assets"
-            ],
+            "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
             "styles": [],
             "scripts": [],
             "extraWebpackConfig": "apps/shell/webpack.config.js"
@@ -209,12 +192,30 @@
               "apps/shell/tsconfig.app.json",
               "apps/shell/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
-
+      }
+    },
+    "test": {
+      "root": "libs/test",
+      "sourceRoot": "libs/test/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/test/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/test/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
       }
     }
   },
