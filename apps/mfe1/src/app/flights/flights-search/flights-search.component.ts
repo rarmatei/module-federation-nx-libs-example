@@ -14,7 +14,7 @@ export class FlightsSearchComponent {
   constructor(
     @Inject(Injector) private injector,
     @Inject(ComponentFactoryResolver) private cfr) {
-    log('created!');
+    log('flights search created!');
   }
 
   search() {

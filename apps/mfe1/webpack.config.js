@@ -1,6 +1,14 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
+  resolve: {
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: './apps/mfe1/tsconfig.app.json',
+      })
+    ]
+  },
   output: {
     publicPath: "http://localhost:3000/",
     uniqueName: "mfe1"
